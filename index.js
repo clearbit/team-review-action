@@ -11,7 +11,7 @@ async function run() {
       owner: github.context.payload.pull_request.base.repo.owner.login,
       repo: github.context.payload.pull_request.base.repo.name,
       pull_number: github.context.payload.pull_request.number,
-    })).user.login;
+    })).data.user.login;
 
     const reviews = (await octokit.pulls.listReviews({
       owner: github.context.payload.pull_request.base.repo.owner.login,
